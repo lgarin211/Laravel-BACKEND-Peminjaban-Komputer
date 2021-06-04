@@ -103,7 +103,7 @@
             var mals=`?Siswa=${nama}&&Absen=${no_Absen}
             &&Kelas=${kelas}&&PC=${nomor_Komputer}
             &&Alasan=${Keterangan}`
-            axios.get('http://172.16.3.186/u/login'+mals+'&&api=true')
+            axios.get('{{ url("/u/login") }}'+mals+'&&api=true')
               .then(function (response) {
                 sessionStorage.setItem("Status", `${nama} anda sudah di izinkan menggunakan Komputer Nomor ${nomor_Komputer}`)
                 document.getElementById('paas').innerHTML=`Jaga Kebersihan Ruangan Serta Komputer`
