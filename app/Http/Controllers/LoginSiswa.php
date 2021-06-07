@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use PhpParser\Node\Expr\Cast\Object_;
 
+
 class LoginSiswa extends Controller
 {
     public function Cliend()
@@ -28,7 +29,8 @@ class LoginSiswa extends Controller
             return \view('respon');
         } else {
             if (!empty($_GET['ap'])) {
-                return \view('page_reg2');
+                $baner = DB::table('baners')->get();
+                return \view('page_reg2',compact('baner'));
             } else {
                 return \view('page_reg');
             }
@@ -63,7 +65,6 @@ class LoginSiswa extends Controller
     public function Casave(Request $request)
     {
         if (!empty($_POST)) {
-
             $cas = new PcHistory;
             $cas->nama = $_POST['nama'];
             $cas->no_Absen = $_POST['no_Absen'];

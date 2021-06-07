@@ -11,10 +11,14 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
-
     $router->get('/', 'HomeController@index')->name('Server Information');
     $router->get('/Server_Information', 'HomeController@index')->name('Server Information');
     $router->resource('/dayhistory', PcController::class);
     $router->get('/onlinepc', 'dayPcController@index');
+    $router->get('/new_Baner', 'dayPcController@addBaner');
+    $router->post('/new_Baner', 'dayPcController@addBaner');
+    $router->resource('/DataBaner', BanerController::class);
+
+
 
 });

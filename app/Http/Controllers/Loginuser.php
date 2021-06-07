@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\PcHistory;
 use Encore\Admin\Middleware\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Loginuser extends Controller
 {
@@ -20,5 +21,10 @@ class Loginuser extends Controller
         );
         // \dd($data);
         return view('data_penggunaan_pc_ajax', compact('data'));
+    }
+    public function Base()
+    {
+         $baner = DB::table('baners')->get();
+        return view('banerlist',compact('baner'));
     }
 }

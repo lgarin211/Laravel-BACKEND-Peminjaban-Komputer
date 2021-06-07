@@ -192,9 +192,3 @@ h2 {
   background-color: #7e0cf5;
   opacity: .2; }
 
-  #tre{
-    background-image: url('../images/bg_1.jpg');
-    -webkit-transition: background-image 0.2s ease-in-out;
-    transition: background-image 0.2s ease-in-out;
-
-  }
